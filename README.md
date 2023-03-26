@@ -6,3 +6,5 @@ endpoints. This is useful in cases where too many concurrent connections over-sa
 Instead of a client connecting to a single server which processes all the requests,
 the client will connect to an HAProxy instance, which will use a reverse proxy to forward the request to one of the available endpoints, 
 based on a load-balancing algorithm.
+
+
