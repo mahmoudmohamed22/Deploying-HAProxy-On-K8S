@@ -19,7 +19,8 @@ spec:
       containers:
       - name: ingress-container-devops
         image: haproxytech/kubernetes-ingress
-        args: [default-backend-service,haproxy-controller-devops/service-backend-devops]
+        args: 
+          - --default-backend-service=haproxy-controller-devops/service-backend-devops
         resources:
           requests:
             memory: "50Mi"
@@ -30,14 +31,7 @@ spec:
                 port: 1024
             initialDelaySeconds: 5
             periodSeconds: 5
-      ports:
-          - name: http
-            containerPort: 80
-          - name: https
-            containerPort: 443
-          - name: stat 
-            containerPort: 1024
-      env:
+        env:
           - name: TZ
             value: Etc/UTC
           - name: POD_NAME
@@ -48,7 +42,14 @@ spec:
             valueFrom:
                fieldRef:
                  fieldPath: metadata.namespace
-                
+        ports:
+              - name: http
+                containerPort: 80
+              - name: https
+                containerPort: 443
+              - name: stat 
+                containerPort: 1024
+      
 
 
       
