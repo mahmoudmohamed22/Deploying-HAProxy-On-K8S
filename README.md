@@ -7,4 +7,11 @@ Instead of a client connecting to a single server which processes all the reques
 the client will connect to an HAProxy instance, which will use a reverse proxy to forward the request to one of the available endpoints, 
 based on a load-balancing algorithm.
 
+HAProxy is an open-source load balancer that can help manage traffic and improve application performance. Kubernetes is a container orchestration platform that simplifies the deployment and scaling of containerized applications. By leveraging the benefits of both technologies, we were able to build a scalable and highly available load balancing solution.
+
+## Prerequisites
+Before you begin, make sure you have the following installed:
+
+- Kubectl
+- Minikube
 
